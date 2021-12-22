@@ -3,13 +3,13 @@ package com.carrental.carrental.domain.enums;
 import lombok.Getter;
 
 @Getter
-public enum Transmission {
+public enum TransmissionEnum {
     M ("Manual"),
     A ("Automatic");
 
     private final String transmissionName;
 
-    Transmission(String transmission) {
+    TransmissionEnum(String transmission) {
         this.transmissionName = transmission;
     }
 }
