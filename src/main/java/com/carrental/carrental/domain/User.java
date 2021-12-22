@@ -8,11 +8,12 @@ import java.awt.image.BufferedImage;
 import java.util.Date;
 
 @Data
-public class Renter {
+public class User {
 
+    private String email;
+    private String password;
     private String firstName;
     private String lastName;
-    private String email;
     private RoleEnum role;
     private Date birthday;
     private BufferedImage picture;
