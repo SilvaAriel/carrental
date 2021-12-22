@@ -14,13 +14,13 @@ public class Car {
     @Getter
     private String licensePlate;
     @Getter
-    private Brand brand;
+    private BrandEnum brand;
     @Getter
     private String model;
     @Getter
     private Date registrationDate;
     @Getter
-    private Transmission transmission;
+    private TransmissionEnum transmission;
     @Getter
     private float weight;
     @Getter
@@ -28,12 +28,12 @@ public class Car {
     @Getter
     private int seats;
     @Getter @Setter
-    private Fuel fuelType;
+    private FuelEnum fuelType;
     @Getter @Setter
-    private Fee fee;
+    private FeeEnum fee;
     @Getter @Setter
     private BufferedImage photos;
     @Getter
-    private CarSize size;
+    private CarSizeEnum size;
 }
 

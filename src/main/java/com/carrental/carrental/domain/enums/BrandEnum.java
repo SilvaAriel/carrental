@@ -1,6 +1,6 @@
 package com.carrental.carrental.domain.enums;
 
-public enum Brand {
+public enum BrandEnum {
     ACURA, ALFA_ROMEO, AUDI, BMW, BENTLEY, BUICK, CADILLAC, CHEVROLET,
     CHRYSLER, DODGE, FIAT, FORD, GMC, GENESIS, HONDA, HYUNDAI, INFINITI,
     JAGUAR, JEEP, KIA, LAND_ROVER, LEXUS, LINCOLN, LOTUS, LUCID, MASERATI,

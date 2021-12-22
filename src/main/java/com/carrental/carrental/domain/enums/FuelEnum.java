@@ -1,6 +1,6 @@
 package com.carrental.carrental.domain.enums;
 
-public enum Fuel {
+public enum FuelEnum {
 
     GASOLINE, DIESEL, BIO_DIESEL, ETHANOL, PETROL
 

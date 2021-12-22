@@ -5,10 +5,10 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class Fee {
+public class FeeEnum {
     private int value;
 
-    public Fee(int value) {
+    public FeeEnum(int value) {
         this.value = value;
     }
 }
