@@ -1,4 +1,4 @@
-package com.carrental.carrental.domain;
+package com.carrental.carrental.domain.enums;
 
 public enum Brand {
     ACURA, ALFA_ROMEO, AUDI, BMW, BENTLEY, BUICK, CADILLAC, CHEVROLET,

@@ -1,4 +1,4 @@
-package com.carrental.carrental.domain;
+package com.carrental.carrental.domain.enums;
 
 public enum Fuel {
 

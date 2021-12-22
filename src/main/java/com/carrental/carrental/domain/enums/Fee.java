@@ -1,4 +1,4 @@
-package com.carrental.carrental.domain;
+package com.carrental.carrental.domain.enums;
 
 import lombok.Getter;
 import lombok.Setter;

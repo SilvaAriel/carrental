@@ -1,5 +1,8 @@
 package com.carrental.carrental.domain;
 
+import com.carrental.carrental.domain.enums.Brand;
+import com.carrental.carrental.domain.enums.Fee;
+import com.carrental.carrental.domain.enums.Fuel;
 import lombok.Getter;
 import lombok.Setter;
 
