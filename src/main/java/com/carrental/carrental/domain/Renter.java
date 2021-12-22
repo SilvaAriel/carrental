@@ -2,10 +2,12 @@ package com.carrental.carrental.domain;
 
 import com.carrental.carrental.domain.enums.RoleEnum;
 import com.neovisionaries.i18n.CountryCode;
+import lombok.Data;
 
 import java.awt.image.BufferedImage;
 import java.util.Date;
 
+@Data
 public class Renter {
 
     private String firstName;
