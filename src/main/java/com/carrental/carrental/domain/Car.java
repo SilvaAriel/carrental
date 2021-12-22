@@ -1,8 +1,6 @@
 package com.carrental.carrental.domain;
 
-import com.carrental.carrental.domain.enums.Brand;
-import com.carrental.carrental.domain.enums.Fee;
-import com.carrental.carrental.domain.enums.Fuel;
+import com.carrental.carrental.domain.enums.*;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -12,18 +10,18 @@ import java.util.Date;
 @Getter
 @Setter
 public class Car {
+
     private String licensePlate;
     private Brand brand;
-    private BufferedImage photos;
-    private Fee fee;
-    private Fuel fuelType;
     private String model;
-    private Date registration_dat;
-    private int seats;
-    private size;
-    private transmission;
+    private Date registrationDate;
+    private Transmission transmission;
     private float weight;
     private Date manufactureYear;
-
+    private int seats;
+    private Fuel fuelType;
+    private Fee fee;
+    private BufferedImage photos;
+    private CarSize size;
 }
 
