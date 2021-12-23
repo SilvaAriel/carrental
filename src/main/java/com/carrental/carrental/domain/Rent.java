@@ -14,9 +14,8 @@ public class Rent {
     private Date dateEnd;
     private int feeDaily;
     private List<Car> cars;
-    private Document contract;
     private Date paymentDate;
-    private Date responsible;
+    private User responsible;
     private int mileage;
     private boolean hasMileageLimit;
     private int mileageLimit;
