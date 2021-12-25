@@ -2,6 +2,7 @@ package com.carrental.carrental.domain;
 
 import com.carrental.carrental.domain.enums.*;
 import com.neovisionaries.i18n.CountryCode;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.time.LocalDate;
@@ -12,39 +13,35 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class RentTest {
 
+    private LocalDate now;
+    private User userOne;
+    private Car carOne;
+    private List<Car> carList;
+    private Rent rentOne;
+
+    @BeforeEach
+    public void setUp() {
+        this.now = LocalDate.now();
+        this.userOne = new User("someemail@email.com", "John", "Doe", RoleEnum.RENTER, now, "Some Street", "1", "Cool", "City", CountryCode.CO, "123456");
+        this.carOne = new Car("ABC1234", BrandEnum.CHEVROLET, "Corsa", LocalDate.now(), TransmissionEnum.A, 100, LocalDate.now(), 4, FuelEnum.PETROL, 100, CarSizeEnum.ECONOMY_CAR);
+        this.carList = Arrays.asList(this.carOne);
+        this.rentOne = new Rent(now, now.plusDays(5), 150, carList, null, userOne, 1000, false, 0);
+    }
+
     @Test
     public void correctDaysLeft() {
-        LocalDate now = LocalDate.now();
-        User userOne = new User("someemail@email.com", "John", "Doe", RoleEnum.RENTER, now, "Some Street", "1", "Cool", "City", CountryCode.CO, "123456");
-        Car carOne = new Car("ABC1234", BrandEnum.CHEVROLET, "Corsa", LocalDate.now(), TransmissionEnum.A, 100, LocalDate.now(), 4, FuelEnum.PETROL, 100, CarSizeEnum.ECONOMY_CAR);
-        List<Car> carList = Arrays.asList(carOne);
-        Rent rentOne = new Rent(now, now.plusDays(5), 150, carList, null, userOne, 1000, false, 0);
-
-        assertEquals(rentOne.getTotalDays(), 5);
-
+        assertEquals(this.rentOne.getTotalDays(), 5);
     }
 
     @Test
     public void changeToCorrectStatus() {
-        LocalDate now = LocalDate.now();
-        User userOne = new User("someemail@email.com", "John", "Doe", RoleEnum.RENTER, now, "Some Street", "1", "Cool", "City", CountryCode.CO, "123456");
-        Car carOne = new Car("ABC1234", BrandEnum.CHEVROLET, "Corsa", LocalDate.now(), TransmissionEnum.A, 100, LocalDate.now(), 4, FuelEnum.PETROL, 100, CarSizeEnum.ECONOMY_CAR);
-        List<Car> carList = Arrays.asList(carOne);
-        Rent rentOne = new Rent(now, now.plusDays(5), 150, carList, null, userOne, 1000, false, 0);
-        rentOne.payRent();
-
+        this.rentOne.payRent();
         assertEquals(rentOne.getStatus(), RentStatusEnum.PAID);
     }
 
     @Test
     public void rentIsValid() {
-        LocalDate now = LocalDate.now();
-        User userOne = new User("someemail@email.com", "John", "Doe", RoleEnum.RENTER, now, "Some Street", "1", "Cool", "City", CountryCode.CO, "123456");
-        Car carOne = new Car("ABC1234", BrandEnum.CHEVROLET, "Corsa", LocalDate.now(), TransmissionEnum.A, 100, LocalDate.now(), 4, FuelEnum.PETROL, 100, CarSizeEnum.ECONOMY_CAR);
-        List<Car> carList = Arrays.asList(carOne);
-        Rent rentOne = new Rent(now, now.plusDays(5), 150, carList, null, userOne, 1000, false, 0);
-        rentOne.payRent();
-
-        assertEquals(rentOne.isValid(), true);
+        this.rentOne.payRent();
+        assertEquals(this.rentOne.isValid(), true);
     }
 }
