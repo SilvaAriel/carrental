@@ -6,10 +6,24 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.awt.image.BufferedImage;
+import java.time.LocalDate;
 import java.util.Date;
 
-@AllArgsConstructor
 public class Car {
+
+    public Car(String licensePlate, BrandEnum brand, String model, LocalDate registrationDate, TransmissionEnum transmission, float weight, LocalDate manufactureYear, int seats, FuelEnum fuelType, int fee, CarSizeEnum size) {
+        this.licensePlate = licensePlate;
+        this.brand = brand;
+        this.model = model;
+        this.registrationDate = registrationDate;
+        this.transmission = transmission;
+        this.weight = weight;
+        this.manufactureYear = manufactureYear;
+        this.seats = seats;
+        this.fuelType = fuelType;
+        this.fee = fee;
+        this.size = size;
+    }
 
     @Getter
     private String licensePlate;
@@ -18,19 +32,19 @@ public class Car {
     @Getter
     private String model;
     @Getter
-    private Date registrationDate;
+    private LocalDate registrationDate;
     @Getter
     private TransmissionEnum transmission;
     @Getter
     private float weight;
     @Getter
-    private Date manufactureYear;
+    private LocalDate manufactureYear;
     @Getter
     private int seats;
     @Getter @Setter
     private FuelEnum fuelType;
     @Getter @Setter
-    private FeeEnum fee;
+    private int fee;
     @Getter @Setter
     private BufferedImage photos;
     @Getter
