@@ -32,7 +32,7 @@ public class Rent {
         this.mileageLimit = mileageLimit;
     }
 
-    public void rentPaid() {
+    public void payRent() {
         this.status = RentStatusEnum.PAID;
     }
 

@@ -31,7 +31,7 @@ public class RentTest {
         Car carOne = new Car("ABC1234", BrandEnum.CHEVROLET, "Corsa", LocalDate.now(), TransmissionEnum.A, 100, LocalDate.now(), 4, FuelEnum.PETROL, 100, CarSizeEnum.ECONOMY_CAR);
         List<Car> carList = Arrays.asList(carOne);
         Rent rentOne = new Rent(now, now.plusDays(5), 150, carList, null, userOne, 1000, false, 0);
-        rentOne.rentPaid();
+        rentOne.payRent();
 
         assertEquals(rentOne.getStatus(), RentStatusEnum.PAID);
     }
@@ -43,7 +43,7 @@ public class RentTest {
         Car carOne = new Car("ABC1234", BrandEnum.CHEVROLET, "Corsa", LocalDate.now(), TransmissionEnum.A, 100, LocalDate.now(), 4, FuelEnum.PETROL, 100, CarSizeEnum.ECONOMY_CAR);
         List<Car> carList = Arrays.asList(carOne);
         Rent rentOne = new Rent(now, now.plusDays(5), 150, carList, null, userOne, 1000, false, 0);
-        rentOne.rentPaid();
+        rentOne.payRent();
 
         assertEquals(rentOne.isValid(), true);
     }
