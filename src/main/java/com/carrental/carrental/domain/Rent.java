@@ -1,14 +1,14 @@
 package com.carrental.carrental.domain;
 
-import lombok.AllArgsConstructor;
+import com.carrental.carrental.domain.enums.RentStatusEnum;
 import lombok.Getter;
 
 import java.time.LocalDate;
 import java.util.List;
 
-@AllArgsConstructor
 @Getter
 public class Rent {
+    private RentStatusEnum status;
     private LocalDate dateBegin;
     private LocalDate dateEnd;
     private int feeDaily;
@@ -19,11 +19,28 @@ public class Rent {
     private boolean hasMileageLimit;
     private int mileageLimit;
 
-//    public Date getTotalDays() {
-//
-//    };
+    public Rent(LocalDate dateBegin, LocalDate dateEnd, int feeDaily, List<Car> cars, LocalDate paymentDate, User responsible, int mileage, boolean hasMileageLimit, int mileageLimit) {
+        this.status = RentStatusEnum.OPEN;
+        this.dateBegin = dateBegin;
+        this.dateEnd = dateEnd;
+        this.feeDaily = feeDaily;
+        this.cars = cars;
+        this.paymentDate = paymentDate;
+        this.responsible = responsible;
+        this.mileage = mileage;
+        this.hasMileageLimit = hasMileageLimit;
+        this.mileageLimit = mileageLimit;
+    }
 
-    public int getDaysLeft(){
-        return this.dateBegin.compareTo(this.dateEnd);
+    public void rentPaid() {
+        this.status = RentStatusEnum.PAID;
+    }
+
+    public int getTotalDays(){
+        return this.dateEnd.compareTo(this.dateBegin);
     };
+
+    public boolean isValid() {
+        return this.status.equals(RentStatusEnum.PAID);
+    }
 }
