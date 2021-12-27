@@ -4,6 +4,7 @@ import com.carrental.carrental.domain.enums.RentStatusEnum;
 import lombok.Getter;
 
 import java.time.LocalDate;
+import java.time.temporal.ChronoUnit;
 import java.util.List;
 
 @Getter
@@ -36,8 +37,8 @@ public class Rent {
         this.status = RentStatusEnum.PAID;
     }
 
-    public int getTotalDays(){
-        return this.dateEnd.compareTo(this.dateBegin);
+    public long getTotalDays(){
+        return this.dateBegin.until(this.dateEnd, ChronoUnit.DAYS);
     };
 
     public boolean isValid() {

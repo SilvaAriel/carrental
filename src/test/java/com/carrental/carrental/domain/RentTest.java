@@ -23,7 +23,7 @@ public class RentTest {
     public void setUp() {
         this.now = LocalDate.now();
         this.userOne = new User("someemail@email.com", "John", "Doe", RoleEnum.RENTER, now, "Some Street", "1", "Cool", "City", CountryCode.CO, "123456");
-        this.carOne = new Car("ABC1234", BrandEnum.CHEVROLET, "Corsa", LocalDate.now(), TransmissionEnum.A, 100, LocalDate.now(), 4, FuelEnum.PETROL, 100, CarSizeEnum.ECONOMY_CAR);
+        this.carOne = new Car("ABC1234", BrandEnum.CHEVROLET, "Corsa", LocalDate.now(), 0, TransmissionEnum.A, 100, ColorEnum.BLACK,LocalDate.now(), 4, FuelEnum.PETROL, 100, CarSizeEnum.ECONOMY_CAR);
         this.carList = Arrays.asList(this.carOne);
         this.rentOne = new Rent(now, now.plusDays(5), 150, carList, null, userOne, 1000, false, 0);
     }
