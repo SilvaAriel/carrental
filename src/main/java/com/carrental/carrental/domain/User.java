@@ -4,6 +4,7 @@ import com.carrental.carrental.domain.enums.RoleEnum;
 import com.neovisionaries.i18n.CountryCode;
 import lombok.Getter;
 import lombok.Setter;
+import org.apache.commons.validator.routines.EmailValidator;
 
 import java.awt.image.BufferedImage;
 import java.time.LocalDate;
@@ -12,9 +13,11 @@ import java.time.LocalDate;
 @Setter
 public class User {
 
-    public User(String email, String password, String firstName, String lastName, RoleEnum role, LocalDate birthday, String addressLineOne, String addressLineTwo, String neighbor, String city, CountryCode country, String zipcode) {
+    // Employee
+    public User(String email, String password, String identification, String firstName, String lastName, RoleEnum role, LocalDate birthday, String addressLineOne, String addressLineTwo, String neighbor, String city, CountryCode country, String zipcode) {
         this.email = email;
         this.password = password;
+        this.identification = identification;
         this.firstName = firstName;
         this.lastName = lastName;
         this.role = role;
@@ -27,10 +30,13 @@ public class User {
         this.zipcode = zipcode;
     }
 
-    public User(String email, String firstName, String lastName, RoleEnum role, LocalDate birthday, String addressLineOne, String addressLineTwo, String neighbor, String city, CountryCode country, String zipcode) {
+    // Renter
+    public User(String email, String identification, String firstName, String lastName, RoleEnum role, String drivingLicence, LocalDate birthday, String addressLineOne, String addressLineTwo, String neighbor, String city, CountryCode country, String zipcode) {
         this.email = email;
+        this.identification = identification;
         this.firstName = firstName;
         this.lastName = lastName;
+        this.drivingLicence = drivingLicence;
         this.role = role;
         this.birthday = birthday;
         this.addressLineOne = addressLineOne;
@@ -42,9 +48,11 @@ public class User {
     }
 
     private String email;
-    private String password;
+    private String password = null;
+    private String identification;
     private String firstName;
     private String lastName;
+    private String drivingLicence = null;
     private RoleEnum role;
     private LocalDate birthday;
     private BufferedImage picture;
@@ -54,5 +62,13 @@ public class User {
     private String city;
     private CountryCode country;
     private String zipcode;
+
+    public boolean validateUser() {
+        return validateEmail();
+    }
+
+    private boolean validateEmail() {
+        return EmailValidator.getInstance().isValid(this.email);
+    }
 
 }
