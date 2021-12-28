@@ -16,11 +16,10 @@ public class Rent {
     private List<Car> cars;
     private LocalDate paymentDate;
     private User responsible;
-    private int mileage;
     private boolean hasMileageLimit;
     private int mileageLimit;
 
-    public Rent(LocalDate dateBegin, LocalDate dateEnd, int feeDaily, List<Car> cars, LocalDate paymentDate, User responsible, int mileage, boolean hasMileageLimit, int mileageLimit) {
+    public Rent(LocalDate dateBegin, LocalDate dateEnd, int feeDaily, List<Car> cars, LocalDate paymentDate, User responsible, boolean hasMileageLimit, int mileageLimit) {
         this.status = RentStatusEnum.OPEN;
         this.dateBegin = dateBegin;
         this.dateEnd = dateEnd;
@@ -28,7 +27,6 @@ public class Rent {
         this.cars = cars;
         this.paymentDate = paymentDate;
         this.responsible = responsible;
-        this.mileage = mileage;
         this.hasMileageLimit = hasMileageLimit;
         this.mileageLimit = mileageLimit;
     }
@@ -41,7 +39,7 @@ public class Rent {
         return this.dateBegin.until(this.dateEnd, ChronoUnit.DAYS);
     };
 
-    public boolean isValid() {
+    public boolean isPaid() {
         return this.status.equals(RentStatusEnum.PAID);
     }
 }
