@@ -8,7 +8,7 @@ import java.util.List;
 
 public interface IRentService {
 
-    Rent createRent(List<Car> carList, User user);
+    Rent createRent(Rent rent);
     Rent findRent(Rent rent);
     Rent payRent(Rent rent);
     Rent closeRent (Rent rent);

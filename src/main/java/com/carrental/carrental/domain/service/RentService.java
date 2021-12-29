@@ -1,15 +1,11 @@
 package com.carrental.carrental.domain.service;
 
-import com.carrental.carrental.domain.Car;
 import com.carrental.carrental.domain.Rent;
-import com.carrental.carrental.domain.User;
-
-import java.util.List;
 
 public class RentService implements IRentService{
     @Override
-    public Rent createRent(List<Car> carList, User user) {
-        return null;
+    public Rent createRent(Rent rent) {
+        return rent;
     }
 
     @Override

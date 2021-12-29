@@ -5,7 +5,9 @@ import com.neovisionaries.i18n.CountryCode;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.time.Instant;
 import java.time.LocalDate;
+import java.time.temporal.ChronoUnit;
 import java.util.Arrays;
 import java.util.List;
 
@@ -13,7 +15,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class RentTest {
 
-    private LocalDate now;
+    private long now;
     private User userOne;
     private Car carOne;
     private List<Car> carList;
@@ -21,11 +23,12 @@ public class RentTest {
 
     @BeforeEach
     public void setUp() {
-        this.now = LocalDate.now();
-        this.userOne = new User("someemail@email.com", "123", "John", "Doe", RoleEnum.RENTER, "ABC",now, "Some Street", "1", "Cool", "City", CountryCode.CO, "123456");
+        this.now = System.currentTimeMillis();
+        long later = Instant.ofEpochMilli(this.now).plus(5, ChronoUnit.DAYS).toEpochMilli();
+        this.userOne = new User("someemail@email.com", "123", "John", "Doe", RoleEnum.RENTER, "ABC",LocalDate.now(), "Some Street", "1", "Cool", "City", CountryCode.CO, "123456");
         this.carOne = new Car("ABC1234", BrandEnum.CHEVROLET, "Corsa", LocalDate.now(), 0, TransmissionEnum.A, 100, ColorEnum.BLACK,LocalDate.now(), 4, FuelEnum.PETROL, 100, CarSizeEnum.ECONOMY_CAR);
         this.carList = Arrays.asList(this.carOne);
-        this.rentOne = new Rent(now, now.plusDays(5), 150, carList, null, userOne, false, 0);
+        this.rentOne = new Rent(this.now, later, 150, carList, userOne, false, 0);
     }
 
     @Test

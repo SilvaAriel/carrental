@@ -8,7 +8,9 @@ import com.neovisionaries.i18n.CountryCode;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.time.Instant;
 import java.time.LocalDate;
+import java.time.temporal.ChronoUnit;
 import java.util.Arrays;
 import java.util.List;
 
@@ -19,19 +21,24 @@ public class RentServiceTest {
     private IRentService rentService;
     private User userOne;
     private Car carOne;
+    private Rent rentOne;
     private List<Car> carList;
+    private long now;
 
     @BeforeEach
     void init() {
+        this.now = System.currentTimeMillis();
+        long later = Instant.ofEpochMilli(this.now).plus(5, ChronoUnit.DAYS).toEpochMilli();
         this.rentService = new RentService();
         this.carOne = new Car("ABC1234", BrandEnum.CHEVROLET, "Corsa", LocalDate.now(), 0, TransmissionEnum.A, 100, ColorEnum.BLACK,LocalDate.now(), 4, FuelEnum.PETROL, 100, CarSizeEnum.ECONOMY_CAR);
-        this.userOne = new User("someemail@email.com", "123", "John", "Doe", RoleEnum.RENTER, "ABC",now, "Some Street", "1", "Cool", "City", CountryCode.CO, "123456");
+        this.userOne = new User("someemail@email.com", "123", "John", "Doe", RoleEnum.RENTER, "ABC",LocalDate.now(), "Some Street", "1", "Cool", "City", CountryCode.CO, "123456");
         this.carList = Arrays.asList(this.carOne);
+        this.rentOne = new Rent(this.now, later, 150, carList, userOne, false, 0);
     }
 
     @Test
-    public whenCallCreateRent_returnValidRent() {
-        Rent rent = rentService.createRent(carList, userOne);
+    public void whenCallCreateRent_returnValidRent() {
+        Rent rent = rentService.createRent(this.rentOne);
         assertTrue(rent.isValid());
     }
 }
