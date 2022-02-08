@@ -70,6 +70,6 @@ public class Rent {
     }
 
     public boolean isValid() {
-        return (!this.status.equals(RentStatusEnum.CLOSED) && !this.status.equals(RentStatusEnum.DUE));
+        return (!this.status.equals(RentStatusEnum.CLOSED) && !this.status.equals(RentStatusEnum.DUE) && !this.status.equals(RentStatusEnum.OPEN));
     }
 }

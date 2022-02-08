@@ -13,7 +13,9 @@ import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Optional;
 
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class RentServiceTest {
@@ -40,5 +42,11 @@ public class RentServiceTest {
     public void whenCallCreateRent_returnValidRent() {
         Rent rent = rentService.createRent(this.rentOne);
         assertTrue(rent.isValid());
+    }
+
+    @Test
+    public void whenCallFindRent_returnRent() {
+        Optional<Rent> rent = rentService.findRent(1);
+        assertNotNull(rent);
     }
 }
