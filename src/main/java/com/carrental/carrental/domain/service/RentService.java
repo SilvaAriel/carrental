@@ -26,7 +26,7 @@ public class RentService implements IRentService{
     }
 
     @Override
-    public boolean closeRent(Rent rent) {
+    public boolean closeRent(int rentId) {
         return true;
     }
 }

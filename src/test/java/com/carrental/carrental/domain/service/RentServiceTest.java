@@ -57,4 +57,10 @@ public class RentServiceTest {
         Rent rent = rentService.payRent(this.creditCard, 1);
         assertEquals(RentStatusEnum.PAID, rent.getStatus());
     }
+
+    @Test
+    public void whenCallCloseRent_returnBoolean() {
+        boolean rentClosed = rentService.closeRent(1);
+        assertTrue(rentClosed);
+    }
 }

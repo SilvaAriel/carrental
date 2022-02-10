@@ -13,5 +13,5 @@ public interface IRentService {
     Rent createRent(Rent rent);
     Optional<Rent> findRent(int userId);
     Rent payRent(CreditCard card, int userId);
-    boolean closeRent (Rent rent);
+    boolean closeRent (int rentId);
 }
