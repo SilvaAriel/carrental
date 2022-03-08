@@ -22,8 +22,12 @@ public class RentTest {
     @BeforeEach
     public void setUp() {
         this.now = LocalDate.now();
-        this.userOne = new User("someemail@email.com", "123", "John", "Doe", RoleEnum.RENTER, "ABC",now, "Some Street", "1", "Cool", "City", CountryCode.CO, "123456");
-        this.carOne = new Car("ABC1234", BrandEnum.CHEVROLET, "Corsa", LocalDate.now(), 0, TransmissionEnum.A, 100, ColorEnum.BLACK,LocalDate.now(), 4, FuelEnum.PETROL, 100, CarSizeEnum.ECONOMY_CAR);
+        this.userOne = new User("someemail@email.com", "123", "John",
+                "Doe", new Role("renter"), "ABC",now, "Some Street",
+                "1", "Cool", "City", CountryCode.CO, "123456");
+        this.carOne = new Car("ABC1234", new Brand("Chevrolet"), "Corsa",
+                LocalDate.now(), 0, TransmissionEnum.A, 100, new Color("black"),
+                LocalDate.now(), 4, FuelEnum.ETHANOL, 100, CarSizeEnum.ECONOMY_CAR);
         this.carList = Arrays.asList(this.carOne);
         this.rentOne = new Rent(now, now.plusDays(5), 150, carList, null, userOne, 1000, false, 0);
     }

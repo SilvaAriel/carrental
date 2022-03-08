@@ -1,17 +1,15 @@
 package com.carrental.carrental.domain;
 
 import com.carrental.carrental.domain.enums.*;
-import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 
 import java.awt.image.BufferedImage;
 import java.time.LocalDate;
-import java.util.Date;
 
 public class Car {
 
-    public Car(String licensePlate, BrandEnum brand, String model, LocalDate registrationDate, int mileage, TransmissionEnum transmission, float weight, ColorEnum color,LocalDate manufactureYear, int seats, FuelEnum fuelType, int fee, CarSizeEnum size) {
+    public Car(String licensePlate, Brand brand, String model, LocalDate registrationDate, int mileage, TransmissionEnum transmission, float weight, Color color,LocalDate manufactureYear, int seats, FuelEnum fuelType, int fee, CarSizeEnum size) {
         this.licensePlate = licensePlate;
         this.brand = brand;
         this.model = model;
@@ -30,7 +28,7 @@ public class Car {
     @Getter
     private String licensePlate;
     @Getter
-    private BrandEnum brand;
+    private Brand brand;
     @Getter
     private String model;
     @Getter
@@ -42,7 +40,7 @@ public class Car {
     @Getter
     private float weight;
     @Getter
-    private ColorEnum color;
+    private Color color;
     @Getter
     private LocalDate manufactureYear;
     @Getter
