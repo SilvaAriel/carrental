@@ -9,7 +9,7 @@ import java.time.LocalDate;
 
 public class Car {
 
-    public Car(String licensePlate, Brand brand, String model, LocalDate registrationDate, int mileage, TransmissionEnum transmission, float weight, Color color,LocalDate manufactureYear, int seats, FuelEnum fuelType, int fee, CarSize size) {
+    public Car(String licensePlate, Brand brand, String model, LocalDate registrationDate, int mileage, TransmissionEnum transmission, float weight, Color color,LocalDate manufactureYear, int seats, FuelEnum fuelType, int fee, CarSizeEnum size) {
         this.licensePlate = licensePlate;
         this.brand = brand;
         this.model = model;
@@ -52,6 +52,6 @@ public class Car {
     @Getter @Setter
     private BufferedImage photos;
     @Getter
-    private CarSize size;
+    private CarSizeEnum size;
 }
 
