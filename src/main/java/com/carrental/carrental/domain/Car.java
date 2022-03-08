@@ -9,7 +9,7 @@ import java.time.LocalDate;
 
 public class Car {
 
-    public Car(String licensePlate, Brand brand, String model, LocalDate registrationDate, int mileage, TransmissionEnum transmission, float weight, Color color,LocalDate manufactureYear, int seats, Fuel fuelType, int fee, CarSize size) {
+    public Car(String licensePlate, Brand brand, String model, LocalDate registrationDate, int mileage, TransmissionEnum transmission, float weight, Color color,LocalDate manufactureYear, int seats, FuelEnum fuelType, int fee, CarSize size) {
         this.licensePlate = licensePlate;
         this.brand = brand;
         this.model = model;
@@ -46,7 +46,7 @@ public class Car {
     @Getter
     private int seats;
     @Getter @Setter
-    private Fuel fuelType;
+    private FuelEnum fuelType;
     @Getter @Setter
     private int fee;
     @Getter @Setter
