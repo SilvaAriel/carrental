@@ -1,6 +1,5 @@
 package com.carrental.carrental.domain;
 
-import com.carrental.carrental.domain.enums.RoleEnum;
 import com.neovisionaries.i18n.CountryCode;
 import lombok.Getter;
 import lombok.Setter;
@@ -14,7 +13,7 @@ import java.time.LocalDate;
 public class User {
 
     // Employee
-    public User(String email, String password, String identification, String firstName, String lastName, RoleEnum role, LocalDate birthday, String addressLineOne, String addressLineTwo, String neighbor, String city, CountryCode country, String zipcode) {
+    public User(String email, String password, String identification, String firstName, String lastName, Role role, LocalDate birthday, String addressLineOne, String addressLineTwo, String neighbor, String city, CountryCode country, String zipcode) {
         this.email = email;
         this.password = password;
         this.identification = identification;
@@ -31,7 +30,7 @@ public class User {
     }
 
     // Renter
-    public User(String email, String identification, String firstName, String lastName, RoleEnum role, String drivingLicence, LocalDate birthday, String addressLineOne, String addressLineTwo, String neighbor, String city, CountryCode country, String zipcode) {
+    public User(String email, String identification, String firstName, String lastName, Role role, String drivingLicence, LocalDate birthday, String addressLineOne, String addressLineTwo, String neighbor, String city, CountryCode country, String zipcode) {
         this.email = email;
         this.identification = identification;
         this.firstName = firstName;
@@ -53,7 +52,7 @@ public class User {
     private String firstName;
     private String lastName;
     private String drivingLicence = null;
-    private RoleEnum role;
+    private Role role;
     private LocalDate birthday;
     private BufferedImage picture;
     private String addressLineOne;
