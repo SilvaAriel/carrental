@@ -6,6 +6,8 @@ CREATE TABLE Users (
     firstName varchar (255),
     lastName varchar (255),
     drivingLicence varchar (100),
+    birthday Date,
+    picture bytea,
     addressLineOne varchar (255),
     addressLineTwo varchar (255),
     neighbor varchar (255),
