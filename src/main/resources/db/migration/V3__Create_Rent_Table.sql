@@ -1,5 +1,5 @@
 CREATE TABLE Rents (
-    rentId INT GENERATED ALWAYS AS IDENTITY,
+    rent_id INT GENERATED ALWAYS AS IDENTITY,
     dateBegin Date NOT NULL,
     dateEnd Date NOT NULL,
     feeDaily INT,

@@ -1,5 +1,5 @@
 CREATE TABLE Users (
-    userId INT GENERATED ALWAYS AS IDENTITY,
+    user_id INT GENERATED ALWAYS AS IDENTITY,
     email varchar (255),
     password varchar (255),
     identification varchar (255),
