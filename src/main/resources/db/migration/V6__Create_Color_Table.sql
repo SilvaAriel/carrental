@@ -1,4 +1,4 @@
-CREATE TABLE Color (
+CREATE TABLE Colors (
     color_id INT GENERATED ALWAYS AS IDENTITY,
     color varchar(255) NOT NULL,
 
