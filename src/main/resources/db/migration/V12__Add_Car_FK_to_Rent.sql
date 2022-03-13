@@ -1,0 +1,3 @@
+ALTER TABLE Rents
+ADD car_id INT NOT NULL,
+ADD FOREIGN KEY (car_id) REFERENCES Cars(car_id);
