@@ -12,6 +12,7 @@ CREATE TABLE Users (
     addressLineTwo varchar (255),
     neighbor varchar (255) NOT NULL,
     city varchar (255) NOT NULL,
+    country varchar(3),
     zipcode varchar (100) NOT NULL,
 
     PRIMARY KEY (user_id)
