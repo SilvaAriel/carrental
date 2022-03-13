@@ -3,5 +3,5 @@ CREATE TABLE CreditCard(
     number varchar(20) NOT NULL,
     expirationDate Date NOT NULL,
 
-    PRIMARY KEY (creditCardId)
+    PRIMARY KEY (creditcard_id)
 )

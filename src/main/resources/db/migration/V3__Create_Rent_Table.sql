@@ -7,5 +7,5 @@ CREATE TABLE Rents (
     mileage INT,
     mileage_limit INT,
 
-    PRIMARY KEY (rentId)
+    PRIMARY KEY (rent_id)
 )

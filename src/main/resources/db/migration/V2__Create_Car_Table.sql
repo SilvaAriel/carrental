@@ -13,5 +13,5 @@ CREATE TABLE Cars (
     photos bytea,
     car_size varchar(100) NOT NULL,
 
-    PRIMARY KEY (carId)
+    PRIMARY KEY (car_id)
 )

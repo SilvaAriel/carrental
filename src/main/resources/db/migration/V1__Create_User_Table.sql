@@ -14,5 +14,5 @@ CREATE TABLE Users (
     city varchar (255) NOT NULL,
     zipcode varchar (100) NOT NULL,
 
-    PRIMARY KEY (userId)
+    PRIMARY KEY (user_id)
 )
