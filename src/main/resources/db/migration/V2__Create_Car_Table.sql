@@ -9,9 +9,9 @@ CREATE TABLE Cars (
     manufacture_year Date NOT NULL,
     seats INT NOT NULL,
     fuel_type varchar(50) NOT NULL,
-    fee INT,
+    fee INT NOT NULL,
     photos bytea,
-    car_size varchar(100) NOT NULL,
+    size varchar(100) NOT NULL,
 
     PRIMARY KEY (car_id)
 )
