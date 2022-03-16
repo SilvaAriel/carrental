@@ -1,57 +1,46 @@
 package com.carrental.carrental.domain;
 
-import com.carrental.carrental.domain.enums.*;
+import com.carrental.carrental.domain.enums.CarSizeEnum;
+import com.carrental.carrental.domain.enums.FuelEnum;
+import com.carrental.carrental.domain.enums.TransmissionEnum;
 import lombok.Getter;
+import lombok.NonNull;
+import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 
 import java.awt.image.BufferedImage;
 import java.time.LocalDate;
 
+@RequiredArgsConstructor
 public class Car {
 
-    public Car(String licensePlate, Brand brand, String model, LocalDate registrationDate, int mileage, TransmissionEnum transmission, float weight, Color color,LocalDate manufactureYear, int seats, FuelEnum fuelType, int fee, CarSizeEnum size) {
-        this.licensePlate = licensePlate;
-        this.brand = brand;
-        this.model = model;
-        this.registrationDate = registrationDate;
-        this.mileage = mileage;
-        this.transmission = transmission;
-        this.weight = weight;
-        this.color = color;
-        this.manufactureYear = manufactureYear;
-        this.seats = seats;
-        this.fuelType = fuelType;
-        this.fee = fee;
-        this.size = size;
-    }
-
-    @Getter
+    @Getter @NonNull
     private String licensePlate;
-    @Getter
+    @Getter @NonNull
     private Brand brand;
-    @Getter
+    @Getter @NonNull
     private String model;
-    @Getter
+    @Getter @NonNull
     private LocalDate registrationDate;
-    @Getter
+    @Getter @Setter @NonNull
     private int mileage;
-    @Getter
+    @Getter @NonNull
     private TransmissionEnum transmission;
     @Getter
     private float weight;
-    @Getter
+    @Getter @Setter @NonNull
     private Color color;
-    @Getter
+    @Getter @NonNull
     private LocalDate manufactureYear;
-    @Getter
+    @Getter @NonNull
     private int seats;
-    @Getter @Setter
+    @Getter @Setter @NonNull
     private FuelEnum fuelType;
-    @Getter @Setter
+    @Getter @Setter @NonNull
     private int fee;
     @Getter @Setter
     private BufferedImage photos;
-    @Getter
+    @Getter @NonNull
     private CarSizeEnum size;
 }
 
