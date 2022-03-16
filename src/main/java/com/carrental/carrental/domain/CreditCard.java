@@ -3,16 +3,18 @@ package com.carrental.carrental.domain;
 import com.carrental.carrental.domain.enums.CreditCardTypeEnum;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NonNull;
+import lombok.RequiredArgsConstructor;
 
 import java.time.LocalDate;
 
-@AllArgsConstructor
+@RequiredArgsConstructor
 @Getter
 public class CreditCard {
 
-    private String number;
-    private User cardHolder;
-    private LocalDate expirationDate;
-    private CreditCardTypeEnum cardType;
+    @NonNull private String number;
+    @NonNull private User cardHolder;
+    @NonNull private LocalDate expirationDate;
+    @NonNull private CreditCardTypeEnum cardType;
 
 }
