@@ -1,8 +1,8 @@
 CREATE TABLE Cars (
     car_id INT GENERATED ALWAYS AS IDENTITY,
-    licensePlate varchar(150),
+    license_plate varchar(150) NOT NULL,
     model varchar(255) NOT NULL,
-    registration_date Date,
+    registration_date Date NOT NULL,
     mileage INT NOT NULL,
     transmission char(1) NOT NULL,
     weight float,
