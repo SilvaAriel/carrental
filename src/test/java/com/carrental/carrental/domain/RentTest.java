@@ -29,7 +29,7 @@ public class RentTest {
                 LocalDate.now(), 0, TransmissionEnum.A, new Color("black"),
                 LocalDate.now(), 4, FuelEnum.ETHANOL, 100, CarSizeEnum.ECONOMY_CAR);
         this.carList = Arrays.asList(this.carOne);
-        this.rentOne = new Rent(now, now.plusDays(5), 150, carList, null, userOne, 1000, false, 0);
+        this.rentOne = new Rent(now, now.plusDays(5), 150, carList, userOne, 1000, false, 0);
     }
 
     @Test

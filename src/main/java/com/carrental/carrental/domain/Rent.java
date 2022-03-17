@@ -1,10 +1,7 @@
 package com.carrental.carrental.domain;
 
 import com.carrental.carrental.domain.enums.RentStatusEnum;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NonNull;
-import lombok.RequiredArgsConstructor;
+import lombok.*;
 
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
@@ -17,12 +14,12 @@ public class Rent {
     @NonNull private LocalDate dateEnd;
     @NonNull private int feeDaily;
     @NonNull private List<Car> cars;
-    @NonNull private LocalDate paymentDate;
+    @Setter private LocalDate paymentDate;
     @NonNull private User responsible;
     @NonNull private int mileage;
     @NonNull private boolean hasMileageLimit;
     @NonNull private int mileageLimit;
-    private RentStatusEnum status = RentStatusEnum.OPEN;;
+    @Setter private RentStatusEnum status = RentStatusEnum.OPEN;
 
     public void payRent() {
         this.status = RentStatusEnum.PAID;
