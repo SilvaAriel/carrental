@@ -1,37 +1,25 @@
 package com.carrental.carrental.domain;
 
 import com.carrental.carrental.domain.enums.RentStatusEnum;
-import lombok.Getter;
+import lombok.*;
 
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
 import java.util.List;
 
+@RequiredArgsConstructor
 @Getter
 public class Rent {
-    private RentStatusEnum status;
-    private LocalDate dateBegin;
-    private LocalDate dateEnd;
-    private int feeDaily;
-    private List<Car> cars;
-    private LocalDate paymentDate;
-    private User responsible;
-    private int mileage;
-    private boolean hasMileageLimit;
-    private int mileageLimit;
-
-    public Rent(LocalDate dateBegin, LocalDate dateEnd, int feeDaily, List<Car> cars, LocalDate paymentDate, User responsible, int mileage, boolean hasMileageLimit, int mileageLimit) {
-        this.status = RentStatusEnum.OPEN;
-        this.dateBegin = dateBegin;
-        this.dateEnd = dateEnd;
-        this.feeDaily = feeDaily;
-        this.cars = cars;
-        this.paymentDate = paymentDate;
-        this.responsible = responsible;
-        this.mileage = mileage;
-        this.hasMileageLimit = hasMileageLimit;
-        this.mileageLimit = mileageLimit;
-    }
+    @NonNull private LocalDate dateBegin;
+    @NonNull private LocalDate dateEnd;
+    @NonNull private int feeDaily;
+    @NonNull private List<Car> cars;
+    @Setter private LocalDate paymentDate;
+    @NonNull private User responsible;
+    @NonNull private int mileage;
+    @NonNull private boolean hasMileageLimit;
+    @NonNull private int mileageLimit;
+    @Setter private RentStatusEnum status = RentStatusEnum.OPEN;
 
     public void payRent() {
         this.status = RentStatusEnum.PAID;

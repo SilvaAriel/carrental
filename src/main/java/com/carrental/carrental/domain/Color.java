@@ -1,11 +1,12 @@
 package com.carrental.carrental.domain;
 
-import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NonNull;
+import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 
-@AllArgsConstructor
+@RequiredArgsConstructor
 public class Color {
-    @Getter @Setter
+    @Getter @Setter @NonNull
     private String color;
 }
