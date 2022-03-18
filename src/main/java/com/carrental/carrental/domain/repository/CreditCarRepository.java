@@ -9,5 +9,5 @@ public interface CreditCarRepository {
     Optional<CreditCard> findCreditCardById(int id);
     Optional<Iterable<CreditCard>> findCreditCardByUser(User user);
     CreditCard createCreditCard(CreditCard creditCard);
-    boolean deleteCreditCard(int id);
+    void deleteCreditCard(int id);
 }
