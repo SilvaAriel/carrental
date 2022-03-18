@@ -1,6 +1,7 @@
 package com.carrental.carrental.domain;
 
 import com.carrental.carrental.domain.enums.CarSizeEnum;
+import com.carrental.carrental.domain.enums.ColorEnum;
 import com.carrental.carrental.domain.enums.FuelEnum;
 import com.carrental.carrental.domain.enums.TransmissionEnum;
 import lombok.Getter;
@@ -29,7 +30,7 @@ public class Car {
     @Getter
     private float weight;
     @Getter @Setter @NonNull
-    private Color color;
+    private ColorEnum color;
     @Getter @NonNull
     private LocalDate manufactureYear;
     @Getter @NonNull

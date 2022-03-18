@@ -6,6 +6,7 @@ CREATE TABLE Cars (
     mileage INT NOT NULL,
     transmission char(1) NOT NULL,
     weight float,
+    color varchar(200) NOT NULL,
     manufacture_year Date NOT NULL,
     seats INT NOT NULL,
     fuel_type varchar(50) NOT NULL,
