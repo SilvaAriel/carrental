@@ -1,4 +1,4 @@
-package com.carrental.carrental.infrastructure.repository.postgresql;
+package com.carrental.carrental.infrastructure.repository.sql;
 
 import com.carrental.carrental.domain.Brand;
 import org.springframework.data.repository.CrudRepository;
