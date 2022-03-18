@@ -1,4 +1,4 @@
-package com.carrental.carrental.infrastructure.repository.sql;
+package com.carrental.carrental.infrastructure.repository.sql.configuration;
 
 import com.carrental.carrental.domain.Rent;
 import org.springframework.data.repository.CrudRepository;
