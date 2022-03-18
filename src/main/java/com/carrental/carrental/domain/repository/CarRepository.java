@@ -8,6 +8,5 @@ public interface CarRepository {
     Iterable<Car> findAllCars();
     Optional<Car> findCarById(int id);
     Car saveCar(Car car);
-    Car editCar(Car car);
-    boolean deleteCar(int id);
+    void deleteCar(int id);
 }
