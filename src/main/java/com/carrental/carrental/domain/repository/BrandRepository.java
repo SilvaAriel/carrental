@@ -6,4 +6,6 @@ import java.util.List;
 
 public interface BrandRepository {
     List<Brand> findAllBrands();
+    Brand findBrandByName(String name);
+    Brand findBrandById(int id);
 }
