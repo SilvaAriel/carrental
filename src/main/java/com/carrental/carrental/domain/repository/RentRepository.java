@@ -8,5 +8,4 @@ public interface RentRepository {
     Optional<Rent> findRentById(int id);
     Iterable<Rent> findAllRents();
     Rent createRent(Rent rent);
-    Rent editRent(Rent rent);
 }
