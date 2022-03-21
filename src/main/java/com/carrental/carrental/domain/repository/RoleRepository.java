@@ -8,5 +8,5 @@ public interface RoleRepository {
     Iterable<Role> findAllRoles();
     Optional<Role> findRoleById(int id);
     Role createRole(Role role);
-    boolean deleteRole(int id);
+    void deleteRole(int id);
 }
